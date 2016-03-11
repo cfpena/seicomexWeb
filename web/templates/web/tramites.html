@@ -16,7 +16,7 @@
 
     <!-- Dropdown Structure -->
   <ul id="dropdown1" class="dropdown-content">
-    <li><a class = "modal-trigger" href="#modal1">Salir</a></li>
+    <li><a href="/">Salir</a></li>
 
   </ul>
   <!-- Menu Principal -->
@@ -25,7 +25,7 @@
     <div class="nav-wrapper ">
       <a id="logo-container" href="#" class="brand-logo"><img src="{% static 'web/images/logo.png' %}"  height="60" width="200" alt=""></img></a>
       <ul class=" right hide-on-med-and-down">
-        <li><a  href="#index-banner">Inicio</a></li>
+
           <li><a class="dropdown-button" href="#!" data-activates="dropdown1"><i class="material-icons">perm_identity</i></a></li>
       </ul>
 
@@ -58,6 +58,7 @@
               <th data-field="Fecha">Fecha</th>
               <th data-field="Hora">Hora</th>
               <th data-field="Estado">Estado</th>
+              <th data-field="Precio">Documento</th>
               <th data-field="Precio">Observacion</th>
           </tr>
         </thead>
@@ -68,17 +69,20 @@
             <td>13:30:02</td>
             <td>En camino</td>
             <td></td>
+            <td></td>
           </tr>
           <tr>
             <td>23-02-2016</td>
             <td>14:30:02</td>
             <td>Inicia Inspeccion</td>
+            <td><a href=""><img src="{% static 'web/images/pdf.svg' %}" height="42" width="42"></img></a></td>
             <td></td>
           </tr>
           <tr>
             <td>23-02-2016</td>
             <td>15:30:02</td>
             <td>Tramite terminado</td>
+            <td></td>
             <td>Se está facturando para emitir pase</td>
           </tr>
         </tbody>
