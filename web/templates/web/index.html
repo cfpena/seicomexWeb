@@ -1,0 +1,271 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <title>Seicomex</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="{% static 'web/css/materialize.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="{% static 'web/css/style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+
+  <!-- Dropdown Structure -->
+<ul id="dropdown1" class="dropdown-content">
+  <li><a class = "modal-trigger" href="#modal1">Ingresar</a></li>
+  <li><a class = "modal-trigger"href="#modal2">Registrarse</a></li>
+</ul>
+  <!-- Menu Principal -->
+  <div class="navbar-fixed">
+  <nav class="orange ligth" role="navigation">
+    <div class="nav-wrapper ">
+      <a id="logo-container" href="#" class="brand-logo"><img src="{% static 'web/images/logo.png' %}"  height="60" width="200" alt=""></img></a>
+      <ul class=" right hide-on-med-and-down">
+        <li><a  href="#index-banner">Inicio</a></li>
+          <li><a href="#nosotros">Nosotros</a></li>
+          <li><a href="#contactenos">Contacto</a></li>
+          <li><a class="dropdown-button" href="#!" data-activates="dropdown1"><i class="material-icons">perm_identity</i></a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="section table-of-contents orange side-nav">
+        <li><a  href="#index-banner">Inicio</a></li>
+          <li><a href="#nosotros">Nosotros</a></li>
+          <li><a href="#contactenos">Contacto</a></li>
+          <li><a class = "modal-trigger"  href="#modal1">Iniciar Sesion</a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+</div>
+<!-- Modal Login-->
+
+<!-- Modal Structure -->
+<div id="modal1" class="modal bottom-sheet">
+  <div class="modal-content">
+
+      <form class="col s12">
+
+        <div class="row">
+          <div class="input-field col s5">
+            <i class="material-icons prefix">mail</i>
+            <input id="emailLogin" type="email" class="validate">
+            <label for="emailLogin" data-error="Error">Email</label>
+          </div>
+          <div class="input-field col s5">
+            <i class="material-icons prefix">lock</i>
+            <input id="passwordLogin" type="password" class="validate">
+            <label for="passwordLogin">Contraseña</label>
+          </div>
+          <div class="input-field col s2">
+          <div class="center-align">
+          <a id="login" class="modal-close center waves-effect waves-light orange btn">Iniciar Sesion</a>
+        </div>
+        </div>
+      </div>
+      </form>
+  </div>
+</div>
+
+
+
+ <!-- Modal Structure -->
+ <div id="modal2" class="modal grey lighten-2">
+        <!-- Register Structure-->
+
+                <div class="row">
+                  <form class="col s12">
+                    <div class="row">
+                      <div class="input-field col s6">
+                        <i class="material-icons prefix">account_box</i>
+                        <input id="name" type="text" class="validate">
+                        <label for="name">Nombres</label>
+                      </div>
+                      <div class="input-field col s6">
+                        <i class="material-icons prefix">account_box</i>
+                        <input id="lastname" type="text" class="validate">
+                        <label for="lastname">Apellidos</label>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="input-field col s6">
+                        <i class="material-icons prefix">mail</i>
+                        <input id="email" type="email" class="validate">
+                        <label for="email" data-error="Error">Email</label>
+                      </div>
+                    <div class="input-field col s6">
+                      <i class="material-icons prefix">mail</i>
+                      <input id="email2" type="email" class="validate" autocomplete="off">
+                      <label for="email2" data-error="Error">Repetir Email</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col s6">
+                      <i class="material-icons prefix">lock</i>
+                      <input id="password" type="password" class="validate">
+                      <label for="password">Contraseña</label>
+                    </div>
+                    <div class="input-field col s6">
+                      <i class="material-icons prefix">lock</i>
+                      <input id="password2" type="password" class="validate">
+                      <label for="password2">Repetir Contraseña</label>
+                    </div>
+                  </div>
+                  </form>
+                  <div class="center-align">
+                  <a id="registro" class="modal-close center waves-effect waves-light orange btn">Registrarse</a>
+                </div>
+                </div>
+
+              </div>
+
+
+
+
+
+
+<!-- Inicio -->
+  <div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <br><br>
+        <h1 class="header center orange-text text-darken-1">Seicomex</h1>
+        <div class="row center">
+          <h4 class="header col s12 orange-text darken">Servicios especializados e intergrales en Comercio Exterior </h4>
+        </div>
+        <div class="row center">
+          <a href="" id="download-button" class="btn-large waves-effect waves-light orange ">Contactenos</a>
+        </div>
+        <br><br>
+
+      </div>
+    </div>
+    <div class="parallax"><img src="{% static 'web/images/puerto.jpg' %}" alt="Unsplashed background img 1"></div>
+  </div>
+
+
+<div id="nosotros" class="section grey lighten-1 scrollspy">
+  <div class="container">
+    <div class="section">
+
+      <!--   Icon Section   -->
+      <div class="row">
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center brown-text"><i class="material-icons">flash_on</i></h2>
+            <h5 class="center">Speeds up development</h5>
+
+            <p class="light">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center brown-text"><i class="material-icons">group</i></h2>
+            <h5 class="center">User Experience Focused</h5>
+
+            <p class="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center brown-text"><i class="material-icons">settings</i></h2>
+            <h5 class="center">Easy to work with</h5>
+
+            <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
+          </div>
+        </div>
+      </div>
+      <br><br><br>
+    </div>
+  </div>
+</div>
+
+
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="{% static 'web/images/buque2.jpg' %}" alt="Unsplashed background img 2"></div>
+  </div>
+<div id="contactenos" class="section grey lighten-1 scrollspy">
+  <div class="container">
+    <div class="section">
+
+      <div class="row">
+        <div class="col s12 center">
+          <h3><i class="mdi-content-send brown-text"></i></h3>
+          <h4>Contact Us</h4>
+          <p class="left-align light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut ultricies eros. Maecenas eros justo, ullamcorper a sapien id, viverra ultrices eros. Morbi sem neque, posuere et pretium eget, bibendum sollicitudin lacus. Aliquam eleifend sollicitudin diam, eu mattis nisl maximus sed. Nulla imperdiet semper molestie. Morbi massa odio, condimentum sed ipsum ac, gravida ultrices erat. Nullam eget dignissim mauris, non tristique erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="{% static 'web/images/puerto2.jpg' %}" alt="Unsplashed background img 3"></div>
+  </div>
+
+  <footer class="page-footer grey lighten-1">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Biografia de la Compañia</h5>
+          <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Settings</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Connect</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Desarrollado Por <a class="brown-text text-lighten-3" href="">Cristian Peña E.</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="{% static 'web/js/materialize.js' %}"></script>
+  <script src="{% static 'web/js/init.js' %}"></script>
+  <script src="{% static 'web/js/index.js' %}"></script>
+
+
+  </body>
+</html>

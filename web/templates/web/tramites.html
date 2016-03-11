@@ -1,0 +1,171 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <title>Seicomex</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="{% static 'web/css/materialize.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="{% static 'web/css/style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+
+
+    <!-- Dropdown Structure -->
+  <ul id="dropdown1" class="dropdown-content">
+    <li><a class = "modal-trigger" href="#modal1">Salir</a></li>
+
+  </ul>
+  <!-- Menu Principal -->
+  <div class="navbar-fixed">
+  <nav class="orange ligth" role="navigation">
+    <div class="nav-wrapper ">
+      <a id="logo-container" href="#" class="brand-logo"><img src="{% static 'web/images/logo.png' %}"  height="60" width="200" alt=""></img></a>
+      <ul class=" right hide-on-med-and-down">
+        <li><a  href="#index-banner">Inicio</a></li>
+          <li><a class="dropdown-button" href="#!" data-activates="dropdown1"><i class="material-icons">perm_identity</i></a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="section table-of-contents orange side-nav">
+        <li><a  href="#index-banner">Inicio</a></li>
+
+        <li><a class = "modal-trigger"  href="#modal1">Cerrar Sesion</a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+</div>
+
+<!-- Datos -->
+
+  <ul class="collapsible" data-collapsible="accordion">
+    <li>
+      <div class="collapsible-header orange lighten-3">
+        <div class="row">
+            <div class="col s1"><i class="material-icons">work</i></div>
+            <div class="col s3 left-align">Titulo: Primer Tramite</div>
+            <div class="col s4 center-align">Referencia: 16/21 - 892</div>
+            <div class="col s4 right-align">Estado: En camino</div>
+        </div>
+      </div>
+      <div class="collapsible-body">
+        <table>
+        <thead>
+          <tr>
+              <th data-field="Fecha">Fecha</th>
+              <th data-field="Hora">Hora</th>
+              <th data-field="Estado">Estado</th>
+              <th data-field="Precio">Observacion</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>22-02-2016</td>
+            <td>13:30:02</td>
+            <td>En camino</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>23-02-2016</td>
+            <td>14:30:02</td>
+            <td>Inicia Inspeccion</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>23-02-2016</td>
+            <td>15:30:02</td>
+            <td>Tramite terminado</td>
+            <td>Se está facturando para emitir pase</td>
+          </tr>
+        </tbody>
+      </table>
+
+
+      </div>
+    </li>
+    <li>
+      <div class="collapsible-header orange lighten-3">
+        <div class="row">
+            <div class="col s1"><i class="material-icons">work</i></div>
+            <div class="col s3 left-align">Titulo: Primer Tramite</div>
+            <div class="col s4 center-align">Referencia: 16/21 - 892</div>
+            <div class="col s4 right-align">Estado: En camino</div>
+        </div>
+      </div>
+      <div class="collapsible-body">
+        <div class="row">
+            <div class="col s2 center-align">Fecha</div>
+            <div class="col s2 center-align">Hora</div>
+            <div class="col s2 center-align">Estado</div>
+            <div class="col s6 center-align">Observaciones</div>
+        </div>
+
+        <!-- datos dinamicos-->
+        <div class="row">
+            <div class="col s2 center-align">22-10-2015</div>
+            <div class="col s2 center-align">13:32</div>
+            <div class="col s2 center-align">Recibo de Documentos</div>
+            <div class="col s6 center-align"></div>
+        </div>
+
+        <div class="row">
+            <div class="col s2 center-align">03-11-2015</div>
+            <div class="col s2 center-align">16:59</div>
+            <div class="col s2 center-align">Tramite de aduana terminado</div>
+            <div class="col s6 center-align">Se esta facturando para recibir pase de aduana</div>
+        </div>
+
+
+      </div>
+    </li>  <li>
+        <div class="collapsible-header orange lighten-3">
+          <div class="row">
+              <div class="col s1"><i class="material-icons">work</i></div>
+              <div class="col s3 left-align">Titulo: Primer Tramite</div>
+              <div class="col s4 center-align">Referencia: 16/21 - 892</div>
+              <div class="col s4 right-align">Estado: En camino</div>
+          </div>
+        </div>
+        <div class="collapsible-body">
+          <div class="row">
+              <div class="col s2 center-align">Fecha</div>
+              <div class="col s2 center-align">Hora</div>
+              <div class="col s2 center-align">Estado</div>
+              <div class="col s6 center-align">Observaciones</div>
+          </div>
+
+          <!-- datos dinamicos-->
+          <div class="row">
+              <div class="col s2 center-align">22-10-2015</div>
+              <div class="col s2 center-align">13:32</div>
+              <div class="col s2 center-align">Recibo de Documentos</div>
+              <div class="col s6 center-align"></div>
+          </div>
+
+          <div class="row">
+              <div class="col s2 center-align">03-11-2015</div>
+              <div class="col s2 center-align">16:59</div>
+              <div class="col s2 center-align">Tramite de aduana terminado</div>
+              <div class="col s6 center-align">Se esta facturando para recibir pase de aduana</div>
+          </div>
+
+
+        </div>
+      </li>
+  </ul>
+
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="{% static 'web/js/materialize.js' %}"></script>
+  <script src="{% static 'web/js/init.js' %}"></script>
+  <script src="{% static 'web/js/index.js' %}"></script>
+
+
+  </body>
+</html>
