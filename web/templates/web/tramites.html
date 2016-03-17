@@ -16,7 +16,7 @@
 
     <!-- Dropdown Structure -->
   <ul id="dropdown1" class="dropdown-content">
-    <li><a href="/">Salir</a></li>
+    <li><a href="/logout">Salir</a></li>
 
   </ul>
   <!-- Menu Principal -->
@@ -42,13 +42,14 @@
 <!-- Datos -->
 
   <ul class="collapsible" data-collapsible="accordion">
+    {% for tramite in tramites %}
     <li>
       <div class="collapsible-header orange lighten-3">
         <div class="row">
             <div class="col s1"><i class="material-icons">work</i></div>
-            <div class="col s3 left-align">Titulo: Primer Tramite</div>
-            <div class="col s4 center-align">Referencia: 16/21 - 892</div>
-            <div class="col s4 right-align">Estado: En camino</div>
+            <div class="col s3 left-align">Titulo: {{tramite.titulo}}</div>
+            <div class="col s4 center-align">Referencia: {{tramite.referencia}}</div>
+            <div class="col s4 right-align">Estado: {{tramite.detalles.last.estado}}</div>
         </div>
       </div>
       <div class="collapsible-body">
@@ -64,102 +65,29 @@
         </thead>
 
         <tbody>
+          {% for detalle in tramite.detalles.all %}
           <tr>
-            <td>22-02-2016</td>
-            <td>13:30:02</td>
-            <td>En camino</td>
+            <td>{{detalle.fecha|date:"d-m-Y "}}</td>
+            <td>{{detalle.fecha|time:"H:i"}}</td>
+            <td>{{detalle.estado}}</td>
+            {% if detalle.documento %}
+            <td><a href={{detalle.documento.url}}><i class="material-icons">archive</i></a></td>
+            {% else %}
             <td></td>
-            <td></td>
+            {% endif %}
+            <td>{{detalle.observacion}}</td>
           </tr>
-          <tr>
-            <td>23-02-2016</td>
-            <td>14:30:02</td>
-            <td>Inicia Inspeccion</td>
-            <td><a href=""><img src="{% static 'web/images/pdf.svg' %}" height="42" width="42"></img></a></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>23-02-2016</td>
-            <td>15:30:02</td>
-            <td>Tramite terminado</td>
-            <td></td>
-            <td>Se está facturando para emitir pase</td>
-          </tr>
+        {% endfor %}
+
         </tbody>
       </table>
 
 
       </div>
     </li>
-    <li>
-      <div class="collapsible-header orange lighten-3">
-        <div class="row">
-            <div class="col s1"><i class="material-icons">work</i></div>
-            <div class="col s3 left-align">Titulo: Primer Tramite</div>
-            <div class="col s4 center-align">Referencia: 16/21 - 892</div>
-            <div class="col s4 right-align">Estado: En camino</div>
-        </div>
-      </div>
-      <div class="collapsible-body">
-        <div class="row">
-            <div class="col s2 center-align">Fecha</div>
-            <div class="col s2 center-align">Hora</div>
-            <div class="col s2 center-align">Estado</div>
-            <div class="col s6 center-align">Observaciones</div>
-        </div>
-
-        <!-- datos dinamicos-->
-        <div class="row">
-            <div class="col s2 center-align">22-10-2015</div>
-            <div class="col s2 center-align">13:32</div>
-            <div class="col s2 center-align">Recibo de Documentos</div>
-            <div class="col s6 center-align"></div>
-        </div>
-
-        <div class="row">
-            <div class="col s2 center-align">03-11-2015</div>
-            <div class="col s2 center-align">16:59</div>
-            <div class="col s2 center-align">Tramite de aduana terminado</div>
-            <div class="col s6 center-align">Se esta facturando para recibir pase de aduana</div>
-        </div>
+{% endfor %}
 
 
-      </div>
-    </li>  <li>
-        <div class="collapsible-header orange lighten-3">
-          <div class="row">
-              <div class="col s1"><i class="material-icons">work</i></div>
-              <div class="col s3 left-align">Titulo: Primer Tramite</div>
-              <div class="col s4 center-align">Referencia: 16/21 - 892</div>
-              <div class="col s4 right-align">Estado: En camino</div>
-          </div>
-        </div>
-        <div class="collapsible-body">
-          <div class="row">
-              <div class="col s2 center-align">Fecha</div>
-              <div class="col s2 center-align">Hora</div>
-              <div class="col s2 center-align">Estado</div>
-              <div class="col s6 center-align">Observaciones</div>
-          </div>
-
-          <!-- datos dinamicos-->
-          <div class="row">
-              <div class="col s2 center-align">22-10-2015</div>
-              <div class="col s2 center-align">13:32</div>
-              <div class="col s2 center-align">Recibo de Documentos</div>
-              <div class="col s6 center-align"></div>
-          </div>
-
-          <div class="row">
-              <div class="col s2 center-align">03-11-2015</div>
-              <div class="col s2 center-align">16:59</div>
-              <div class="col s2 center-align">Tramite de aduana terminado</div>
-              <div class="col s6 center-align">Se esta facturando para recibir pase de aduana</div>
-          </div>
-
-
-        </div>
-      </li>
   </ul>
 
 
