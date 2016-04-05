@@ -1,0 +1,4 @@
+#apra grabar video
+streamer -q -c /dev/video0 -f rgb24 -r 3 -t 00:30:00 -o /home/jhs/outfile.avi
+#para tomar fotos
+streamer -f jpeg -o image.jpeg

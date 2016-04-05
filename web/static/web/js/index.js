@@ -33,6 +33,7 @@ $(document).ready(function(){
         }
         ,success: function(data,status) {
           Materialize.toast(data, 4000);
+            $('#modal2').closeModal();
         }
     });
   }
@@ -52,5 +53,30 @@ $(document).ready(function(){
         else Materialize.toast(data, 4000);
       }
   });
-  })
+});
+
+$('#enviar').click(function(){
+
+  if(!$('#asuntoContacto').val()) Materialize.toast('El asunto está vacio', 4000);
+  else if(!$('#emailContacto').val()) Materialize.toast('El email está vacio', 4000);
+  else if(!$('#texto').val()) Materialize.toast('El texto está vacio', 4000);
+  else {
+  $.ajax({
+    url: "/enviar",
+    type: 'POST',
+    data: {
+        titulo:'Contacto',
+        asunto:$('#asuntoContacto').val(),
+        email:$('#emailContacto').val(),
+        texto:$('#texto').val()
+
+    }
+    ,success: function(data,status) {
+      Materialize.toast(data, 4000);
+    }
+  });
+}
+});
+
+
  });

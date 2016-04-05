@@ -5,17 +5,15 @@ from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.shortcuts import redirect
 from django.contrib.auth import authenticate, login as auth_login, logout as auth_logout
-from .models import nosotros_primero,nosotros_segundo,nosotros_tercero, tramite,detalle
+from .models import tramite,detalle
 import mimetypes
 import os
 import urllib
 
 @user_passes_test(lambda user: not user.username, login_url='/tramites', redirect_field_name=None)
 def index(request):
-    primero=nosotros_primero.objects.all()[0]
-    segundo=nosotros_segundo.objects.all()[0]
-    tercero=nosotros_tercero.objects.all()[0]
-    return render(request, 'web/index.html', {'primero':primero,'segundo':segundo,'tercero':tercero})
+
+    return render(request, 'web/index.html', {})
 
 
 @login_required()
