@@ -127,3 +127,4 @@ STATIC_URL = '/static/'
 LOGIN_REDIRECT_URL = "/tramites"
 # Redirect when login is not correct.
 LOGIN_URL = '/'
+STATIC_ROOT = os.path.join(BASE_DIR, "static/")

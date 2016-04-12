@@ -1,0 +1,1 @@
+/home/seicomex/seicomex/__init__.py

@@ -1,0 +1,1 @@
+/home/seicomex/seicomex/wsgi.py
