@@ -76,7 +76,10 @@ def sendMailNoticia(modeladmin, request, queryset):
                                  "<h2><p>" + n.titulo + "</p></h2><p>Mira nuestra nueva noticia sobre en <a href=seicomex.tk/noticias/?id=" + str(
                                      n.id) + ">SEICOMEX NOTICIAS</a></p>", to=[user.email])
             email.content_subtype ="html"
-            email.send()
+            try:
+                email.send()
+            except:
+                continue
 sendMailNoticia.short_description = "Enviar mail a los usuarios"
 
 class noticiasAdmin(admin.ModelAdmin):
