@@ -1,0 +1,112 @@
+BEGIN:VCALENDAR
+METHOD:PUBLISH
+X-WR-CALDESC:Eventos de calendario para el usuario\, John Jairo Cedeno Cuen
+ ca
+X-WR-CALNAME: Calendario (SIDWeb) John Jairo Cedeno Cuenca
+CALSCALE:GREGORIAN
+PRODID:iCalendar-Ruby
+VERSION:2.0
+BEGIN:VEVENT
+DESCRIPTION:<p>En un archivo de texto\, enumere los comandos de shell neces
+ arios para efectuar las siguiente tareas:</p>\n<ol>\n<li>Crear una carpeta 
+ en su "home" llamada <em>foo </em>con los siguientes archivos dentro: <stro
+ ng>(2 puntos)</strong>\n</li>\n<ol>\n<li>Tres archivos nuevos vacíos con lo
+ s nombres: <em>bar1\,</em><em>bar2 y car3</em>\n</li>\n<li>Una copia del ar
+ chivo oculto <em>.bash_profile</em>\n</li>\n<li>Un enlace<em> simbólico </e
+ m>al archivo<em> /etc/hosts</em>\n</li>\n</ol>\n<li>Borrar silenciosamente 
+ (sin que el comando de borrar pida confirmación) y usando "<em>wildcards</e
+ m>" en un solo comando los archivos <em>bar1</em> y <em>bar2</em>. No borra
+ r car3. <strong>(1 punto)</strong>\n</li>\n<li>Cambiar de nombre el directo
+ rio <em>foo</em> a <em>foobar </em><strong>(1 punto)</strong>\n</li>\n<li>O
+ btener información del archivo de log del sistema llamado sys<em>log</em>: 
+ <strong>(1 punto)</strong>\n</li>\n<ol>\n<li>Listar los permisos y el tamañ
+ o (leible por humano)</li>\n<li>Observar las últimas veinte líneas del arch
+ ivo y mostrar automáticamente líneas nuevas mientras el archivo va creciend
+ o</li>\n</ol>\n</ol><p>El entregable es un archivo .txt donde se especifica
+  claramente a que tarea pertenece cada comando o grupo de comandos. Asegúre
+ se de usar el comando <em>cd</em> o usar caminos absolutos para ejecutar la
+ s tareas de manera correcta.</p>\n<h2>Referencias</h2>\n<ul>\n<li>\n<a id="
+ " class="instructure_file_link " title="TLCL-16.07.pdf" href="/courses/4081
+ 7/files/2737334/download?wrap=1">TLCL-16.07.pdf</a> Capítulos 1 - 4</li>\n<
+ /ul>
+DTEND:20170508T045500Z
+DTSTAMP:20170503T204200Z
+DTSTART:20170508T045500Z
+CLASS:PUBLIC
+SEQUENCE:0
+SUMMARY:Uso básico del shell
+UID:event-assignment-153481
+URL:http://www.sidweb.espol.edu.ec/calendar?include_contexts=course_40817&m
+ onth=05&year=2017#assignment_153481
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:<p>WordCount</p>\n<p><a id="" class="instructure_file_link " ti
+ tle="moby-dick.txt" href="/courses/40832/files/2765226/download?wrap=1">mob
+ y-dick.txt</a></p>\n<p><a id="" class="instructure_file_link " title="mappe
+ r draft.py" href="/courses/40832/files/2765230/download?wrap=1">mapper draf
+ t.py</a></p>\n<p><a id="" class="instructure_file_link " title="reducer dra
+ ft.py" href="/courses/40832/files/2765231/download?wrap=1">reducer draft.py
+ </a></p>\n<p>Completaremos los archivos para Hadoop Streaming</p>
+DTEND:20170513T045500Z
+DTSTAMP:20170510T214200Z
+DTSTART:20170513T045500Z
+CLASS:PUBLIC
+SEQUENCE:0
+SUMMARY:MapReduceStreaming
+UID:event-assignment-154787
+URL:http://www.sidweb.espol.edu.ec/calendar?include_contexts=course_40832&m
+ onth=05&year=2017#assignment_154787
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:<p>El objetivo de esta práctica es usar los conceptos básicos p
+ ara la creación de scripts. La práctica contiene dos ejercicios\, ambos deb
+ en de ser entregados via a este medio en un archivo aparte con extensión .s
+ h (por ejemplo: ejercicio1.sh y ejercicio2.sh).</p>\n<h2>Ejercicio 1 (2 pun
+ tos)</h2>\n<p>Crear un script que muestre en pantalla todos los directorios
+  (y solo los directorios) de un directorio que es especificado como parámet
+ ro. Es decir\, al ejecutar su script:</p>\n<p>$ejercicio1.sh /dev</p>\n<p>d
+ ebe de listar todos los directorios dentro del directrio /dev</p>\n<p><span
+  style="color: #444444\; font-size: 1.8em\; font-weight: normal\;">Ejercici
+ o 2 (5 puntos)</span></p>\n<p>Crear un script que pregunte al usuario por u
+ n directorio. Luego el script debe de buscar cuantos archivos ejecutables e
+ xisten en el mismo y grabar en un archivo de texto la lista con estos archi
+ vos.</p>\n<h2>Referencias</h2>\n<ul>\n<li>Capítulos 19-21 y 24 - 29\,  <a c
+ lass="instructure_file_link " title="TLCL-16.07.pdf" href="/courses/40817/f
+ iles/2737334/download?wrap=1">TLCL</a>\n</li>\n</ul>
+DTEND:20170516T045500Z
+DTSTAMP:20170510T210700Z
+DTSTART:20170516T045500Z
+CLASS:PUBLIC
+SEQUENCE:0
+SUMMARY:Mi primer script
+UID:event-assignment-154777
+URL:http://www.sidweb.espol.edu.ec/calendar?include_contexts=course_40817&m
+ onth=05&year=2017#assignment_154777
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:<p><a id="" class="instructure_file_link " title="Homework 1.pd
+ f" href="/courses/40808/files/2781932/download?wrap=1">Homework 1.pdf</a></
+ p>
+DTEND:20170520T045500Z
+DTSTAMP:20170515T221800Z
+DTSTART:20170520T045500Z
+CLASS:PUBLIC
+SEQUENCE:0
+SUMMARY:Homework # 1
+UID:event-assignment-155714
+URL:http://www.sidweb.espol.edu.ec/calendar?include_contexts=course_40808&m
+ onth=05&year=2017#assignment_155714
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:<p>Esta lección cubre la Unidad 1: Programación en Shell.</p>
+DTEND:20170601T045500Z
+DTSTAMP:20170510T225600Z
+DTSTART:20170601T045500Z
+CLASS:PUBLIC
+SEQUENCE:0
+SUMMARY:Programación en Shell
+UID:event-assignment-154789
+URL:http://www.sidweb.espol.edu.ec/calendar?include_contexts=course_40817&m
+ onth=05&year=2017#assignment_154789
+END:VEVENT
+END:VCALENDAR

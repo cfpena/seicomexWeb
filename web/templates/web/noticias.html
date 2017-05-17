@@ -1,0 +1,233 @@
+{% load staticfiles %}
+
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <title>Seicomex</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="{% static 'web/css/materialize.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="{% static 'web/css/style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+{% csrf_token %}
+  <!-- Dropdown Structure -->
+<ul id="dropdown1" class="dropdown-content">
+  <li><a class = "modal-trigger" href="#modal1">Ingresar</a></li>
+  <li><a class = "modal-trigger"href="#modal2">Registrarse</a></li>
+</ul>
+  <!-- Menu Principal -->
+  <div class="navbar-fixed">
+  <nav class="orange ligth" role="navigation">
+    <div class="nav-wrapper ">
+      <a id="logo-container" href="#" class="brand-logo"><img src="{% static 'web/images/logo.png' %}"  height="60" width="200" alt=""/></a>
+      <ul class=" right hide-on-med-and-down">
+        <li><a  href="{% url 'web-inicio' %}">Inicio</a></li>
+          <li><a class="dropdown-button" href="#!" data-activates="dropdown1"><i class="material-icons">perm_identity</i></a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="section table-of-contents orange side-nav">
+          <li><a  href="{% url 'web-inicio' %}">Inicio</a></li>
+          <li><a class = "modal-trigger"  href="#modal1">Iniciar Sesion</a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+</div>
+<!-- Modal Login-->
+
+<!-- Modal Structure -->
+<div id="modal1" class="modal bottom-sheet">
+  <div class="modal-content">
+
+      <form class="col s12">
+
+        <div class="row">
+          <div class="input-field col s5">
+            <i class="material-icons prefix">mail</i>
+            <input id="emailLogin" type="email" class="validate">
+            <label for="emailLogin" data-error="Error">Email</label>
+          </div>
+          <div class="input-field col s5">
+            <i class="material-icons prefix">lock</i>
+            <input id="passwordLogin" type="password" class="validate">
+            <label for="passwordLogin">Contraseña</label>
+          </div>
+          <div class="input-field col s2">
+          <div class="center-align">
+          <a id="login" class="center waves-effect waves-light orange btn">Iniciar Sesion</a>
+        </div>
+        </div>
+      </div>
+      </form>
+  </div>
+</div>
+
+
+
+ <!-- Modal Structure -->
+ <div id="modal2" class="modal grey lighten-2">
+        <!-- Register Structure-->
+
+                <div class="row">
+                  <form class="col s12">
+                    <div class="row">
+                      <div class="input-field col s6">
+                        <i class="material-icons prefix">account_box</i>
+                        <input id="name" type="text" class="validate">
+                        <label for="name">Nombres</label>
+                      </div>
+                      <div class="input-field col s6">
+                        <i class="material-icons prefix">account_box</i>
+                        <input id="lastname" type="text" class="validate">
+                        <label for="lastname">Apellidos</label>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="input-field col s6">
+                        <i class="material-icons prefix">mail</i>
+                        <input id="email" type="email" class="validate">
+                        <label for="email" data-error="Error">Email</label>
+                      </div>
+                    <div class="input-field col s6">
+                      <i class="material-icons prefix">mail</i>
+                      <input id="email2" type="email" class="validate" autocomplete="off">
+                      <label for="email2" data-error="Error">Repetir Email</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col s6">
+                      <i class="material-icons prefix">lock</i>
+                      <input id="password" type="password" class="validate">
+                      <label for="password">Contraseña</label>
+                    </div>
+                    <div class="input-field col s6">
+                      <i class="material-icons prefix">lock</i>
+                      <input id="password2" type="password" class="validate">
+                      <label for="password2">Repetir Contraseña</label>
+                    </div>
+                  </div>
+                  <div class="center-align">
+
+                  <a id="registro" class=" center waves-effect waves-light orange btn">Registrarse</a>
+                </div>
+                  </form>
+
+                </div>
+
+              </div>
+<!-- Modal concatenos -->
+<!-- Modal Structure -->
+<div id="modal3" class="modal grey lighten-2">
+  <div class="modal-content">
+
+      <form class="col s12">
+        <div class="row">
+          <div class="input-field col s5">
+            <i class="material-icons prefix">title</i>
+            <input id="asuntoContacto" type="text" class="validate">
+            <label for="asuntoContacto">Asunto</label>
+          </div>
+          <div class="input-field col s5">
+            <i class="material-icons prefix">mail</i>
+            <input id="emailContacto" type="email" class="validate">
+            <label for="emailContacto" data-error="Error">Email</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <i class="material-icons prefix">create</i>
+            <textarea id="texto" class="materialize-textarea"></textarea>
+            <label for="texto">Texto</label>
+          </div>
+          <div class="input-field col s2">
+          <div class="center-align">
+          <a id="enviar" class="center waves-effect waves-light orange btn">Enviar</a>
+        </div>
+        </div>
+      </div>
+      </form>
+  </div>
+</div>
+
+
+ <div class="row">
+      <div class="col s3">
+
+          <ul class="collection">
+              {% for noticia in noticias %}
+                    <li class="collection-item"><a  href="{% url 'web-noticias' %}?id={{ noticia.id }}">{{noticia.titulo}}</a></li>
+              {% endfor %}
+    </ul>
+      </div>
+      <div class="col s9">
+
+        <div class="col s12">
+          <div class="card white darken-1">
+            <div class="card-content gray-text">
+                <p align="right" class="card-date">{{noticia.fecha}}</p>
+              <p align="center" class="card-title">{{noticia.titulo}}</p>
+              {% autoescape off %}{{ noticia.noticia }}{% endautoescape %}
+            </div>
+          </div>
+
+      </div>
+
+      </div>
+ </div>
+
+
+
+
+
+
+  <footer class="page-footer grey lighten-1">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Biografia de la Compañia</h5>
+          <p class="grey-text text-lighten-4">SEICOMEX pone a sus disposición servicios agiles y de alta calidad en materia aduanera y comercio exterior.
+Con experiencia de mas de 25 años en el área aduanera y de comercio exterior, ofrecemos un servicio altamente capacitado en la nacionalización y/o despachos aduaneros.</p>
+
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Links de Interés</h5>
+          <ul>
+            <li><a  href="http://www.aduana.gob.ec/index.action">SERVICIO NACIONAL DE ADUANAS DEL ECUADOR</a></li>
+            <li><a href="https://portal.aduana.gob.ec/">ECUAPASS </a></li>
+            <li><a href="http://www.sri.gob.ec/web/guest/home">SERVICIO DE RENTAS INTERNAS</a></li>
+            <li><a href="http://www.apg.gob.ec/">AUTORIDAD PORTUARIA DE GUAYAQUL </a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Redes sociales</h5>
+          <ul>
+            <li><a  target="_blank" href="https://www.facebook.com/Seicomex">Facebook</a></li>
+            <li><a target="_blank" href="https://www.twitter.com/seicomex">Twitter</a></li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Desarrollado Por <a class="black-text text-lighten-3" href="https://www.facebook.com/qtimxta888">Cristian Peña E.</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="{% static 'web/js/materialize.js' %}"></script>
+  <script src="{% static 'web/js/init.js' %}"></script>
+  <script src="{% static 'web/js/index.js' %}"></script>
+<script type="text/javascript" src='{% static "ckeditor/ckeditor-init.js" %}'></script>
+<script type="text/javascript" src='{% static "ckeditor/ckeditor/ckeditor.js" %}'></script>
+
+  </body>
+
+</html>

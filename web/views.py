@@ -5,7 +5,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.shortcuts import redirect
 from django.contrib.auth import authenticate, login as auth_login, logout as auth_logout
-from .models import tramite,detalle
+from .models import tramite,detalle,noticia
 import mimetypes
 import os
 import urllib
@@ -13,7 +13,7 @@ import urllib
 @user_passes_test(lambda user: not user.username, login_url='/tramites', redirect_field_name=None)
 def index(request):
 
-    return render(request, 'web/index.html', {})
+    return render(request, 'web/index.html', {'id': noticia.objects.last().id})
 
 
 @login_required()
@@ -66,14 +66,15 @@ def logout(request):
     auth_logout(request)
     return redirect("/")
 def documentos(request,filename):
-    fp = open('documentos/'+filename, 'rb')
+
+    fp = open('media/documentos/'+filename, 'rb')
     response = HttpResponse(fp.read())
     fp.close()
     type, encoding = mimetypes.guess_type(filename)
     if type is None:
         type = 'application/octet-stream'
     response['Content-Type'] = type
-    response['Content-Length'] = str(os.stat('documentos/'+filename).st_size)
+    response['Content-Length'] = str(os.stat('media/documentos/'+filename).st_size)
     if encoding is not None:
         response['Content-Encoding'] = encoding
 
@@ -90,4 +91,17 @@ def documentos(request,filename):
         filename_header = 'filename*=UTF-8\'\'%s' % urllib.quote(filename.encode('utf-8'))
     response['Content-Disposition'] = 'attachment; ' + filename_header
     return response
+
+
+def noticias(request):
+
+
+    if not 'id' in request.GET:
+        query = noticia.objects.latest('fecha')
+    else:
+        query = noticia.objects.get(id=request.GET['id'])
+
+
+    return render(request, 'web/noticias.html',{'noticias':noticia.objects.all().order_by('-fecha'),
+                                                'noticia': query})
 # Create your views here.

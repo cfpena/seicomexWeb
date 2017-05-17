@@ -19,9 +19,12 @@ class tramite(models.Model):
         ordering = ('titulo',)
 @python_2_unicode_compatible
 class detalle(models.Model):
+
+
+
     fecha = models.DateTimeField('Fecha')
     estado = models.CharField(max_length=50)
-    documento = models.FileField(upload_to='documentos', blank=True)
+    documento = models.FileField(upload_to='media/documentos', blank=True)
     observacion = models.CharField(max_length=100, blank=True)
     tramite = models.ForeignKey(tramite, on_delete=models.CASCADE,related_name='detalles')
     def __str__(self):              # __unicode__ on Python 2
@@ -31,7 +34,20 @@ class detalle(models.Model):
     class Meta:
         ordering = ('fecha',)
 
+@python_2_unicode_compatible
+class noticia(models.Model):
+    from ckeditor_uploader import fields
 
+    fecha = models.DateField()
+    titulo = models.CharField(max_length=50)
+    noticia = fields.RichTextUploadingField()
+    activo = models.BooleanField(default=False)
+
+    def __str__(self):  # __unicode__ on Python 2
+        return smart_unicode(self.titulo)
+
+    class Meta:
+        ordering = ('fecha',)
 
 
 # Create your models here.

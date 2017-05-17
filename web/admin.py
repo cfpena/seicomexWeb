@@ -1,10 +1,12 @@
 from django.contrib import admin
-from .models import tramite,detalle
+from .models import tramite,detalle,noticia
 from django.contrib.auth.models import User, Group
 from django.core.urlresolvers import reverse
 from django.utils.html import format_html
 from mensajes.models import mensaje
 from django.forms import CheckboxSelectMultiple
+from django import forms
+from ckeditor_uploader.widgets import CKEditorUploadingWidget
 from django.db import models
 
 class DetalleInline(admin.TabularInline):
@@ -49,9 +51,22 @@ class limite(admin.ModelAdmin):
     else:
       return True
 
+class noticiasForm(forms.ModelForm):
+
+    noticia = forms.CharField(widget=CKEditorUploadingWidget())
+
+    class Meta:
+        model = noticia
+        fields = '__all__'
+
+
+class noticiasAdmin(admin.ModelAdmin):
+    form = noticiasForm
+
 admin.site.unregister(Group)
 admin.site.unregister(User)
 admin.site.register(User,userAdmin)
 admin.site.register(mensaje,mensajeAdmin)
 admin.site.register(tramite, TramiteAdmin)
 admin.site.register(detalle)
+admin.site.register(noticia,noticiasAdmin)
