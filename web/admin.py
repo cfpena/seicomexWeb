@@ -8,6 +8,11 @@ from django.forms import CheckboxSelectMultiple
 from django import forms
 from ckeditor_uploader.widgets import CKEditorUploadingWidget
 from django.db import models
+from django.core.mail import EmailMessage
+from django.core.mail import EmailMultiAlternatives
+from django.template.loader import render_to_string
+from django.utils.html import strip_tags
+
 
 class DetalleInline(admin.TabularInline):
     model = detalle
@@ -60,8 +65,24 @@ class noticiasForm(forms.ModelForm):
         fields = '__all__'
 
 
+
+
+def sendMailNoticia(modeladmin, request, queryset):
+    for n in queryset:
+        for user in n.users.all():
+
+
+            email = EmailMessage("Noticia :" + n.titulo,
+                                 "<h2><p>" + n.titulo + "</p></h2><p>Mira nuestra nueva noticia sobre en <a href=seicomex.tk/noticias/?id=" + str(
+                                     n.id) + ">SEICOMEX NOTICIAS</a></p>", to=[user.email])
+            email.content_subtype ="html"
+            email.send()
+sendMailNoticia.short_description = "Enviar mail a los usuarios"
+
 class noticiasAdmin(admin.ModelAdmin):
     form = noticiasForm
+    actions = [sendMailNoticia]
+
 
 admin.site.unregister(Group)
 admin.site.unregister(User)

@@ -42,6 +42,7 @@ class noticia(models.Model):
     titulo = models.CharField(max_length=50)
     noticia = fields.RichTextUploadingField()
     activo = models.BooleanField(default=False)
+    users = models.ManyToManyField(User, blank=True, null=True, related_name='usuarios_mail')
 
     def __str__(self):  # __unicode__ on Python 2
         return smart_unicode(self.titulo)
