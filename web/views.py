@@ -13,7 +13,7 @@ import urllib
 @user_passes_test(lambda user: not user.username, login_url='/tramites', redirect_field_name=None)
 def index(request):
 
-    return render(request, 'web/index.html', {'id': noticia.objects.last().id})
+    return render(request, 'web/index.html', {})
 
 
 @login_required()
